@@ -6,34 +6,42 @@ using System.Threading.Tasks;
 
 namespace регистрация_и_вход {
     internal class MainMenu {
-        static public void DisplayMenu()
+        static public bool DisplayMenu(bool marker = false)
         {
-            while (true) {
-                Console.Clear();
-                //Console.WriteLine("Главное меню\n");
+            while (!marker) {
+                Console.WriteLine("Главное меню\n");
 
                 Console.WriteLine("Выберите режим:\n" +
-                    "sign up\t- зарегистрироваться;\n" +
-                    "log in\t- войти;\n" +
+                    "sign up\t- зарегистрироваться\n" +
+                    "log in\t- войти\n" +
                     "exit\t- завершить работу\n");
 
                 switch (Console.ReadLine()) {
                     case ("sign up"):
-                        AccountList.AddAccount();
+                        AddAccount.DisplayFrom();
+                        Console.Clear();
                         break;
 
                     case ("log in"):
-                        AccountList.LogIn();
+                        marker = LogIn.DisplayFrom();
+                        if (!marker)
+                            Console.WriteLine("Неверный логин или пароль!");
                         break;
 
                     case ("exit"):
-                        return;
+                        Console.Clear();
+                        return false;
 
-                    default:                       
+                    default:
+                        Console.Clear();
                         Console.WriteLine("Допущена ошибка! Повторите ввод!\n");
                         break;
                 }
             }
+            if (SomeApp.DisplayApp()) {
+                return true;
+            }
+            return false;
         }
     }
 }

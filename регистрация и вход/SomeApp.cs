@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace регистрация_и_вход {
     internal class SomeApp {
-        public static void DisplayApp()
+        public static bool DisplayApp()
         {
+            Console.Clear();
             Console.WriteLine("Вы вошли в аккаунт!\n");
-            Console.WriteLine("log out - выйти");
+
+            Console.WriteLine("log out\t- выйти из аккаунта\n" +
+                "exit\t- закрыть программу");
 
             while (true) {
                 switch (Console.ReadLine()) {
                     case ("log out"):
-                        return;
+                        return true;
+
+                    case ("exit"):
+                        return false;
 
                     default:
                         Console.WriteLine("Допущена опечатка! Повторите ввод!");

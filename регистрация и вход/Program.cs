@@ -2,7 +2,8 @@
     internal class Program {
         static void Main(string[] args)
         {
-            MainMenu.DisplayMenu();
+            while (MainMenu.DisplayMenu())
+                Console.Clear();
         }
     }
 }
