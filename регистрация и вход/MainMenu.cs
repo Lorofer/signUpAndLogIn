@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace регистрация_и_вход {
+namespace signUpAndLogIn {
     internal class MainMenu {
         static public bool DisplayMenu(bool marker = false)
         {
@@ -18,12 +18,12 @@ namespace регистрация_и_вход {
 
                 switch (Console.ReadLine()) {
                     case ("sign up"):
-                        AddAccount.DisplayFrom();
+                        UserAccount.AddAccount();
                         Console.Clear();
                         break;
 
                     case ("log in"):
-                        marker = LogIn.DisplayFrom();
+                        marker = UserAccount.LogIn();
                         if (!marker)
                             Console.WriteLine("Неверный логин или пароль!");
                         break;
@@ -40,7 +40,7 @@ namespace регистрация_и_вход {
             }
             if (SomeApp.DisplayApp()) {
                 return true;
-            }
+            }    
             return false;
         }
     }

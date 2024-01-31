@@ -1,9 +1,10 @@
-﻿namespace регистрация_и_вход {
+﻿namespace signUpAndLogIn {
     internal class Program {
         static void Main(string[] args)
         {
-            while (MainMenu.DisplayMenu())
+            while (MainMenu.DisplayMenu()) {
                 Console.Clear();
+            }
         }
     }
 }
