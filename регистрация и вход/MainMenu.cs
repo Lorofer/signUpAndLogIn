@@ -18,12 +18,12 @@ namespace signUpAndLogIn {
 
                 switch (Console.ReadLine()) {
                     case ("sign up"):
-                        UserAccount.AddAccount();
+                        Account.AddAccount();
                         Console.Clear();
                         break;
 
                     case ("log in"):
-                        marker = UserAccount.LogIn();
+                        marker = Account.LogIn();
                         if (!marker)
                             Console.WriteLine("Неверный логин или пароль!");
                         break;

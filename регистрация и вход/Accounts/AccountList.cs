@@ -15,7 +15,7 @@ namespace signUpAndLogIn {
         static public bool FindAnAccount(string login, string password)
         {
             foreach (Account acc in accounts) {
-                if (acc.Login == login && acc.Password == password) {
+                if (acc.login == login && acc.password == password) {
                     return true;
                 }
             }
